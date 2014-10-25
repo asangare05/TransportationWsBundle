@@ -24,6 +24,12 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('transportation_ws');
 
+        $rootNode
+        	->children()
+        	->scalarNode('ws_type')->defaultValue('ws')->end()
+        	->end()
+        ;
+
         return $treeBuilder;
     }
 }

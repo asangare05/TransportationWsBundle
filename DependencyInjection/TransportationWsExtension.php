@@ -27,7 +27,21 @@ class TransportationWsExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
 
+        if(isset($config['enabled']) && $config['enabled']) {
+            $loader->load('services.yml');    
+        }
+        
+
+    }
+
+    public function getXsdValidationBasePath() 
+    {
+        return __DIR__.'/../Resources/config/';
+    }
+
+    public function getNamespace()
+    {
+        return __DIR__.'/../Resources/Validation/Schema/';
     }
 }
