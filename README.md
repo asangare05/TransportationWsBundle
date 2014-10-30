@@ -34,7 +34,7 @@ public function registerBundles()
 {
     $bundles = array(
         //
-        new Transportation\Bundle\WsBundle\TrepiaRestApiBundle(),        
+        new Transportation\Bundle\WsBundle\TransportationWsBundle(),        
     );
 }
 ```
